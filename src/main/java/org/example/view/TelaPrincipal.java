@@ -40,6 +40,7 @@ public class TelaPrincipal extends JFrame {
         painelBotoes.add(btnVisaoGeral);
         painelBotoes.add(btnTransacoes);
         painelBotoes.add(btnCategorias);
+        painelBotoes.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
         painelMenu.add(painelBotoes, BorderLayout.NORTH);
     }
 
