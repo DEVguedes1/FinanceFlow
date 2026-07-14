@@ -5,6 +5,7 @@ import java.awt.*;
 
 public class TelaPrincipal extends JFrame {
 
+    private JButton btnVisaoGeral, btnTransacoes, btnCategorias;
     private JPanel painelMenu;
     private JPanel painelConteudo;
 
@@ -17,14 +18,53 @@ public class TelaPrincipal extends JFrame {
         setLayout(new BorderLayout());
 
         inicializarComponentes();
+        estilizarTela();
+
+        setVisible(true);
     }
 
     private void inicializarComponentes(){
         this.painelMenu = new JPanel();
         add(painelMenu,BorderLayout.WEST);
-        painelMenu.setLayout(new GridLayout(0, 1, 0, 10));
+
+        JPanel painelBotoes = new JPanel(new GridLayout(3, 1, 0, 15));
+        painelBotoes.setOpaque(false);
 
         this.painelConteudo = new JPanel();
         add(painelConteudo, BorderLayout.CENTER);
+
+        this.btnCategorias = new JButton("Categoria");
+        this.btnTransacoes = new JButton("Transação");
+        this.btnVisaoGeral = new JButton("Visão Geral");
+
+        painelBotoes.add(btnVisaoGeral);
+        painelBotoes.add(btnTransacoes);
+        painelBotoes.add(btnCategorias);
+        painelMenu.add(painelBotoes, BorderLayout.NORTH);
+    }
+
+    private void estilizarTela(){
+        painelMenu.setPreferredSize(new Dimension(250,768));
+
+        painelMenu.setBackground(new Color(33, 37, 41));
+        painelConteudo.setBackground(new Color(248, 249, 250));
+
+        btnCategorias.setBorderPainted(false);
+        btnCategorias.setFocusPainted(false);
+        btnCategorias.setContentAreaFilled(false);
+        btnCategorias.setForeground(Color.WHITE);
+        btnCategorias.setFont(new Font("SansSerif", Font.BOLD, 16));
+
+        btnTransacoes.setBorderPainted(false);
+        btnTransacoes.setFocusPainted(false);
+        btnTransacoes.setContentAreaFilled(false);
+        btnTransacoes.setForeground(Color.WHITE);
+        btnTransacoes.setFont(new Font("SansSerif", Font.BOLD, 16));
+
+        btnVisaoGeral.setBorderPainted(false);
+        btnVisaoGeral.setFocusPainted(false);
+        btnVisaoGeral.setContentAreaFilled(false);
+        btnVisaoGeral.setForeground(Color.WHITE);
+        btnVisaoGeral.setFont(new Font("SansSerif", Font.BOLD, 16));
     }
 }
