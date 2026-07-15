@@ -11,7 +11,7 @@ public class TelaPrincipal extends JFrame {
 
     public TelaPrincipal(String title){
         setTitle(title);
-        setSize(1024,768);
+        setSize(1024,700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setResizable(false);
@@ -19,6 +19,7 @@ public class TelaPrincipal extends JFrame {
 
         inicializarComponentes();
         estilizarTela();
+        configurarEventos();
 
         setVisible(true);
     }
@@ -30,7 +31,7 @@ public class TelaPrincipal extends JFrame {
         JPanel painelBotoes = new JPanel(new GridLayout(3, 1, 0, 15));
         painelBotoes.setOpaque(false);
 
-        this.painelConteudo = new JPanel();
+        this.painelConteudo = new JPanel(new BorderLayout());
         add(painelConteudo, BorderLayout.CENTER);
 
         this.btnCategorias = new JButton("Categoria");
@@ -67,5 +68,14 @@ public class TelaPrincipal extends JFrame {
         btnVisaoGeral.setContentAreaFilled(false);
         btnVisaoGeral.setForeground(Color.WHITE);
         btnVisaoGeral.setFont(new Font("SansSerif", Font.BOLD, 16));
+    }
+
+    private void configurarEventos(){
+        btnVisaoGeral.addActionListener(e -> {
+                painelConteudo.removeAll();
+                painelConteudo.add(new PainelVisaoGeral(), BorderLayout.CENTER);
+                painelConteudo.revalidate();
+                painelConteudo.repaint();
+        });
     }
 }
