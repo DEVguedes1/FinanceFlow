@@ -77,5 +77,19 @@ public class TelaPrincipal extends JFrame {
                 painelConteudo.revalidate();
                 painelConteudo.repaint();
         });
+
+        btnCategorias.addActionListener(e -> {
+            painelConteudo.removeAll();
+            painelConteudo.add(new PainelCategorias(), BorderLayout.CENTER);
+            painelConteudo.revalidate();
+            painelConteudo.repaint();
+        });
+
+        btnTransacoes.addActionListener(e -> {
+            painelConteudo.removeAll();
+            painelConteudo.add(new PainelTransicoes(), BorderLayout.CENTER);
+            painelConteudo.revalidate();
+            painelConteudo.repaint();
+        });
     }
 }
