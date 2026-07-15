@@ -1,6 +1,7 @@
 package org.example.view;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
 public class PainelVisaoGeral extends JPanel {
@@ -8,11 +9,16 @@ public class PainelVisaoGeral extends JPanel {
     private JLabel lblSaldoValor, lblReceitasValor, lblDespesasValor;
     private JLabel lblSaldoTitulo, lblReceitasTitulo, lblDespesasTitulo;
     private JPanel cardSaldo, cardReceitas, cardDespesas;
+    private JTable tabelaTransacoes;
+    private JScrollPane barraRolagem;
+
 
     public PainelVisaoGeral() {
         setLayout(new BorderLayout());
         inicializarCards();
         estilizarCards();
+        inicializarTabela();
+        estilizarTabela();
     }
 
     private void inicializarCards(){
@@ -75,4 +81,17 @@ public class PainelVisaoGeral extends JPanel {
         lblDespesasValor.setFont(new Font("SansSerif", Font.BOLD, 18));
         lblDespesasValor.setForeground(Color.GREEN);
     }
+
+    private void inicializarTabela(){
+        String[] colunas = {"Descrição", "Valor", "Tipo", "Data", "Categoria"};
+
+        DefaultTableModel tabela =  new DefaultTableModel(colunas, 0);
+        this.tabelaTransacoes = new JTable(tabela);
+        this.barraRolagem = new JScrollPane(tabelaTransacoes);
+        add(barraRolagem,BorderLayout.CENTER);
+    }
+
+    private void estilizarTabela(){
+        barraRolagem.setBorder(BorderFactory.createEmptyBorder(0, 20, 20, 20));
+        barraRolagem.getViewport().setBackground(Color.WHITE);}
 }

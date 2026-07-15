@@ -5,6 +5,6 @@ import org.example.view.TelaPrincipal;
 public class Main {
     public static void main(String[] args) {
 
-        TelaPrincipal tl = new TelaPrincipal("Finance flow");
+        new TelaPrincipal("Finance flow");
     }
 }
