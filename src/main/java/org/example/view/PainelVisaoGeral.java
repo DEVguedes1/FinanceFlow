@@ -18,6 +18,7 @@ public class PainelVisaoGeral extends JPanel {
     private void inicializarCards(){
         JPanel painelCards = new JPanel();
         painelCards.setLayout(new GridLayout(1,3,15,0));
+        painelCards.setOpaque(false);
 
         this.cardSaldo = new JPanel();
         this.cardReceitas = new JPanel();
@@ -35,6 +36,11 @@ public class PainelVisaoGeral extends JPanel {
         cardSaldo.setLayout(new GridLayout(2,1));
         cardReceitas.setLayout(new GridLayout(2,1));
         cardDespesas.setLayout(new GridLayout(2,1));
+
+        cardSaldo.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        cardReceitas.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        cardDespesas.setBorder(BorderFactory.createEmptyBorder(15, 15, 15, 15));
+        painelCards.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
         cardSaldo.add(lblSaldoTitulo);
         cardSaldo.add(lblSaldoValor);
