@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Singleton;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;

@@ -86,7 +86,7 @@ public class PainelVisaoGeral extends JPanel {
         String[] colunas = {"Descrição", "Valor", "Tipo", "Data", "Categoria"};
 
         DefaultTableModel tabela =  new DefaultTableModel(colunas, 0);
-        tabela.addRow(new Object[]{"Salário IFPB", "R$ 1.402,17", "Receita", "15/07/2026", "Bolsa"});
+        tabela.addRow(new Object[]{"Salário", "R$ 1.402,17", "Receita", "15/07/2026", "Bolsa"});
         this.tabelaTransacoes = new JTable(tabela);
         this.barraRolagem = new JScrollPane(tabelaTransacoes);
         add(barraRolagem,BorderLayout.CENTER);

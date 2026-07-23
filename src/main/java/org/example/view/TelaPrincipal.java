@@ -87,7 +87,7 @@ public class TelaPrincipal extends JFrame {
 
         btnTransacoes.addActionListener(e -> {
             painelConteudo.removeAll();
-            painelConteudo.add(new PainelTransicoes(), BorderLayout.CENTER);
+            painelConteudo.add(new PainelTransacoes(), BorderLayout.CENTER);
             painelConteudo.revalidate();
             painelConteudo.repaint();
         });
