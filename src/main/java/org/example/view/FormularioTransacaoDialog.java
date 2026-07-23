@@ -5,6 +5,10 @@ import java.awt.*;
 
 public class FormularioTransacaoDialog extends JDialog {
 
+    private String descricao,valor,tipo,categoria;
+    private JTextField txtDescricao,txtValor;
+    private JComboBox<String> comboTipo, comboCategoria;
+
     public FormularioTransacaoDialog() {
         setTitle("Transação");
         setSize(400,500);
@@ -22,20 +26,22 @@ public class FormularioTransacaoDialog extends JDialog {
         painelFormulario.setBorder(BorderFactory.createEmptyBorder(15,15,15,15));
 
         JLabel lblDescricao = new JLabel("Descrição:");
-        JTextField txtDescricao = new JTextField();
+        txtDescricao = new JTextField();
 
         JLabel lblValor = new JLabel("Valor:");
-        JTextField txtValor = new JTextField();
+        txtValor = new JTextField();
 
         JLabel lblTipo = new JLabel("Tipos:");
         String[] tipos = {"Receita", "Despesa"};
-        JComboBox<String> comboTipo = new JComboBox<>(tipos);
+        comboTipo = new JComboBox<>(tipos);
 
         JLabel lblCategoria = new JLabel("Categoria:");
         String[] categorias = {"Alimentação", "Educação", "Lazer"};
-        JComboBox<String> comboCategoria = new JComboBox<>(categorias);
+        comboCategoria = new JComboBox<>(categorias);
 
         JButton btnSalvar = new JButton("Salvar");
+        btnSalvar.addActionListener(
+                e -> salvar());
 
         painelFormulario.add(lblDescricao);
         painelFormulario.add(txtDescricao);
@@ -53,5 +59,39 @@ public class FormularioTransacaoDialog extends JDialog {
         painelFormulario.add(btnSalvar);
 
         add(painelFormulario);
+    }
+
+    private void salvar(){
+        descricao = txtDescricao.getText();
+        valor = txtValor.getText();
+        tipo = (String) comboTipo.getSelectedItem();
+        categoria = (String) comboCategoria.getSelectedItem();
+
+        if (getDescricao().trim().isEmpty() ||
+            getValor().trim().isEmpty() ||
+                getTipo().trim().isEmpty() ||
+                    getCategoria().trim().isEmpty()){
+                        System.out.println("Preencha todos os campos!");
+                        return;
+        }
+
+        System.out.println("Salvo com sucesso");
+        dispose();
+    }
+
+    public String getDescricao() {
+        return descricao;
+    }
+
+    public String getValor() {
+        return valor;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public String getCategoria() {
+        return categoria;
     }
 }
