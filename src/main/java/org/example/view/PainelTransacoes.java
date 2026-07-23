@@ -22,9 +22,11 @@ public class PainelTransacoes extends JPanel {
 
        JButton button = new JButton("+ Nova Transação");
        painelTopo.add(button,BorderLayout.EAST);
+       button.addActionListener(
+               e -> new FormularioTransacaoDialog().setVisible(true));
 
        painelTopo.setOpaque(false);
-        setBackground(Color.WHITE);
+       setBackground(Color.WHITE);
        painelTopo.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
     }
 
