@@ -96,7 +96,7 @@ FinanceFlow/
 
 1. **Clone o repositório:**
    ```bash
-   git clone [https://github.com/SEU_USUARIO/FinanceFlow.git](https://github.com/SEU_USUARIO/FinanceFlow.git)
+   git clone [https://github.com/SEU_USUARIO/FinanceFlow.git](https://github.com/SEU_USUARIO/FinanceFlow.git) ``` 
 
 2. **Importe o projeto na sua IDE:**
    * Abra a IDE e selecione a opção de abrir/importar projeto.
