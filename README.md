@@ -84,6 +84,7 @@ FinanceFlow/
 │   │       └── images/
 ├── pom.xml (ou build.gradle)
 └── README.md
+```
 
 ## 🚀 Como Rodar o Projeto
 
