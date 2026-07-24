@@ -43,11 +43,11 @@ Os diagramas de engenharia do sistema foram estruturados para guiar o desenvolvi
 
 ### Diagrama de Casos de Uso
 
-*(Mapeamento das ações permitidas ao Usuário dentro das fronteiras do sistema)*
+![caso de uso](src/images/753690458_2152464078816313_8713086250357765181_n.png)
 
 ### Diagrama de Classes (UML)
 
-*(Estrutura de pacotes, aplicação do padrão MVC e uso do Singleton)*
+![UML](src/images/753690458_2152464078816313_n.png)
 
 ---
 
